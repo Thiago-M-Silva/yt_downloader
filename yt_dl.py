@@ -21,7 +21,9 @@ def on_progress(stream, chunk, bytes_remaining):
     porcentagem = bytes_downloaded / total_size * 100
     per = str(int(porcentagem))
     progresso.configure(text = per +'%')
-    progresso.updadte()
+    progresso.update()
+
+    barra_progresso.set(float(porcentagem) / 100)
 
 # configurações
 ctk.set_appearance_mode("dark")
